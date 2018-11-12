@@ -1,7 +1,7 @@
 Package: mlflow
 Type: Package
 Title: Interface to 'MLflow'
-Version: 0.7.0
+Version: 0.8.0
 Authors@R: c(
   person("Matei", "Zaharia", email = "matei@databricks.com", role = c("aut", "cre")),
   person("Javier", "Luraschi", email = "javier@rstudio.com", role = c("aut")),
@@ -27,10 +27,10 @@ Imports: aws.s3, forge, fs, git2r, httpuv, httr, jsonlite, openssl,
 RoxygenNote: 6.1.0
 Suggests: covr, keras, lintr, testthat
 NeedsCompilation: no
-Packaged: 2018-09-28 19:17:25 UTC; tomas
+Packaged: 2018-11-12 21:12:59 UTC; aaron
 Author: Matei Zaharia [aut, cre],
   Javier Luraschi [aut],
   Kevin Kuo [aut] (<https://orcid.org/0000-0001-7803-7901>),
   RStudio [cph]
 Repository: CRAN
-Date/Publication: 2018-10-06 21:30:03 UTC
+Date/Publication: 2018-11-12 22:00:03 UTC
