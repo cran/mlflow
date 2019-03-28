@@ -2,15 +2,15 @@
 
 #' Serve an RFunc MLflow Model
 #'
-#' Serve an RFunc MLflow Model as a local web api.
+#' Serves an RFunc MLflow model as a local web API.
 #'
 #' @param model_path The path to the MLflow model, as a string.
 #' @param run_uuid ID of run to grab the model from.
 #' @param host Address to use to serve model, as a string.
 #' @param port Port to use to serve model, as numeric.
-#' @param daemonized Makes 'httpuv' server daemonized so R interactive sessions
+#' @param daemonized Makes `httpuv` server daemonized so R interactive sessions
 #'   are not blocked to handle requests. To terminate a daemonized server, call
-#'   'httpuv::stopDaemonizedServer()' with the handle returned from this call.
+#'   `httpuv::stopDaemonizedServer()` with the handle returned from this call.
 #' @param browse Launch browser with serving landing page?
 #' @param restore Should \code{mlflow_restore_snapshot()} be called before serving?
 #'
@@ -149,11 +149,7 @@ serve_handlers <- function(host, port) {
         )
       )
     },
-    "^/[^/]*$" = function(req, model) {
-      serve_static_file_response("swagger", file.path("dist", req$PATH_INFO))
-    },
     "^/predict" = function(req, model) {
-
       json_raw <- req$rook.input$read()
 
       results <- serve_prediction(json_raw, model)
@@ -167,6 +163,9 @@ serve_handlers <- function(host, port) {
           jsonlite::toJSON(list(predictions = results), auto_unbox = TRUE)
         ))
       )
+    },
+    "^/[^/]*$" = function(req, model) {
+      serve_static_file_response("swagger", file.path("dist", req$PATH_INFO))
     },
     ".*" = function(req, sess, model) {
       stop("Invalid path.")

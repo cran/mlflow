@@ -1,31 +1,125 @@
-new_mlflow_client <- function(tracking_uri, server_url = NULL) {
+
+new_mlflow_client <- function(tracking_uri) {
+  UseMethod("new_mlflow_client")
+}
+
+new_mlflow_uri <- function(raw_uri) {
+  parts <- strsplit(raw_uri, "://")[[1]]
   structure(
-    list(
-      tracking_uri = tracking_uri,
-      server_url = server_url %||% tracking_uri
-    ),
-    class = "mlflow_client"
+    list(scheme = parts[1], path = parts[2]),
+    class = c(paste("mlflow_", parts[1], sep = ""), "mlflow_uri")
   )
 }
 
-#' Initialize an MLflow client
+new_mlflow_client_impl <- function(get_host_creds, get_cli_env = list, class = character()) {
+  structure(
+    list(get_host_creds = get_host_creds,
+         get_cli_env = get_cli_env
+    ),
+    class = c(class, "mlflow_client")
+  )
+}
+
+new_mlflow_host_creds <- function( host = NA, username = NA, password = NA, token = NA,
+                                   insecure = "False") {
+  structure(
+    list(host = host, username = username, password = password, token = token, insecure = insecure),
+    class = "mlflow_host_creds"
+  )
+}
+
+#' @export
+print.mlflow_host_creds <- function(x, ...) {
+  mlflow_host_creds <- x
+  args <- list(
+    host = if (is.na(mlflow_host_creds$host)) {
+      ""
+    } else {
+      paste ("host = ", mlflow_host_creds$host, sep = "")
+    },
+    username = if (is.na(mlflow_host_creds$username)) {
+      ""
+    } else {
+      paste ("username = ", mlflow_host_creds$username, sep = "")
+    },
+    password = if (is.na(mlflow_host_creds$password)) {
+      ""
+    } else {
+      "password = *****"
+    },
+    token = if (is.na(mlflow_host_creds$token)) {
+      ""
+    } else {
+      "token = *****"
+    },
+    insecure = paste("insecure = ", as.character(mlflow_host_creds$insecure),
+                     sep = ""),
+    sep = ", "
+  )
+  cat("mlflow_host_creds( ")
+  do.call(cat, args[args != ""])
+  cat(")\n")
+}
+
+new_mlflow_client.mlflow_file <- function(tracking_uri) {
+  path <- tracking_uri$path
+  server_url <- if (!is.null(mlflow_local_server(path)$server_url)) {
+    mlflow_local_server(path)$server_url
+  } else {
+    local_server <- mlflow_server(file_store = path, port = mlflow_connect_port())
+    mlflow_register_local_server(tracking_uri = path, local_server = local_server)
+    local_server$server_url
+  }
+  new_mlflow_client_impl(get_host_creds = function () {
+    new_mlflow_host_creds(host = server_url)
+  })
+}
+
+new_mlflow_client.default <- function(tracking_uri) {
+  stop(paste("Unsupported scheme: '", tracking_uri$scheme, "'", sep = ""))
+}
+
+basic_http_client <- function(tracking_uri) {
+  host <- paste(tracking_uri$scheme, tracking_uri$path, sep = "://")
+  get_host_creds <- function () {
+    new_mlflow_host_creds(
+      host = host,
+      username = Sys.getenv("MLFLOW_USERNAME", NA),
+      password = Sys.getenv("MLFLOW_PASSWORD", NA),
+      token = Sys.getenv("MLFLOW_TOKEN", NA),
+      insecure = Sys.getenv("MLFLOW_INSECURE", NA)
+    )
+  }
+  cli_env <- function() {
+    res <- list(
+      MLFLOW_USERNAME = Sys.getenv("MLFLOW_USERNAME", NA),
+      MLFLOW_PASSWORD = Sys.getenv("MLFLOW_PASSWORD", NA),
+      MLFLOW_TOKEN = Sys.getenv("MLFLOW_TOKEN", NA),
+      MLFLOW_INSECURE = Sys.getenv("MLFLOW_INSECURE", NA)
+    )
+    res[!is.na(res)]
+  }
+  new_mlflow_client_impl(get_host_creds, cli_env)
+}
+
+new_mlflow_client.mlflow_http <- function(tracking_uri) {
+  basic_http_client(tracking_uri)
+}
+
+new_mlflow_client.mlflow_https <- function(tracking_uri) {
+  basic_http_client(tracking_uri)
+}
+
+#' Initialize an MLflow Client
 #'
 #' @param tracking_uri The tracking URI. If not provided, defaults to the service
 #'  set by `mlflow_set_tracking_uri()`.
 #' @keywords internal
 mlflow_client <- function(tracking_uri = NULL) {
-  tracking_uri <- tracking_uri %||% mlflow_get_tracking_uri()
-  server_url <- if (startsWith(tracking_uri, "http")) {
-    tracking_uri
-  } else if (!is.null(mlflow_local_server(tracking_uri)$server_url)) {
-    mlflow_local_server(tracking_uri)$server_url
-  } else {
-    local_server <- mlflow_server(file_store = tracking_uri, port = mlflow_connect_port())
-    mlflow_register_local_server(tracking_uri = tracking_uri, local_server = local_server)
-    local_server$server_url
-  }
-
-  new_mlflow_client(tracking_uri, server_url = server_url)
+  tracking_uri <- new_mlflow_uri(tracking_uri %||% mlflow_get_tracking_uri())
+  client <- new_mlflow_client(tracking_uri)
+  mlflow_validate_server(client)
+  client
 }
 
 #' Create Experiment - Tracking Client
@@ -50,7 +144,7 @@ mlflow_client_create_experiment <- function(client, name, artifact_location = NU
 
 #' List Experiments
 #'
-#' Get a list of all experiments.
+#' Gets a list of all experiments.
 #'
 #' @param view_type Qualifier for type of experiments to be returned. Defaults to `ACTIVE_ONLY`.
 #' @template roxlate-client
@@ -69,14 +163,13 @@ mlflow_client_list_experiments <- function(client, view_type = c("ACTIVE_ONLY", 
 
 #' Get Experiment
 #'
-#' Get meta data for experiment and a list of runs for this experiment.
+#' Gets metadata for an experiment and a list of runs for the experiment.
 #'
 #' @param experiment_id Identifer to get an experiment.
 #' @template roxlate-client
 mlflow_client_get_experiment <- function(client, experiment_id) {
   mlflow_rest(
-    "experiments", "get", client = client,
-    query = list(experiment_id = experiment_id)
+    "experiments", "get", client = client, query = list(experiment_id = experiment_id)
   )
 }
 
@@ -138,7 +231,7 @@ mlflow_client_create_run <- function(
 }
 
 mlflow_rest_update_run <- function(client, run_uuid, status, end_time) {
-  mlflow_rest("runs", "update", client = client, verb = "POST", data = list(
+  mlflow_rest("runs", "update", verb = "POST", client = client, data = list(
     run_uuid = run_uuid,
     status = status,
     end_time = end_time
@@ -147,25 +240,25 @@ mlflow_rest_update_run <- function(client, run_uuid, status, end_time) {
 
 #' Delete Experiment
 #'
-#' Mark an experiment and associated runs, params, metrics, … etc for deletion. If the
+#' Marks an experiment and associated runs, params, metrics, etc. for deletion. If the
 #'   experiment uses FileStore, artifacts associated with experiment are also deleted.
 #'
 #' @param experiment_id ID of the associated experiment. This field is required.
 #' @template roxlate-client
 mlflow_client_delete_experiment <- function(client, experiment_id) {
   mlflow_rest(
-    "experiments", "delete", client = client, verb = "POST",
+    "experiments", "delete", verb = "POST", client = client,
     data = list(experiment_id = experiment_id),
   )
 }
 
 #' Restore Experiment
 #'
-#' Restore an experiment marked for deletion. This also restores associated metadata,
+#' Restores an experiment marked for deletion. This also restores associated metadata,
 #'   runs, metrics, and params. If experiment uses FileStore, underlying artifacts
 #'   associated with experiment are also restored.
 #'
-#' Throws RESOURCE_DOES_NOT_EXIST if experiment was never created or was permanently deleted.
+#' Throws `RESOURCE_DOES_NOT_EXIST` if the experiment was never created or was permanently deleted.
 #'
 #' @param experiment_id ID of the associated experiment. This field is required.
 #' @template roxlate-client
@@ -178,7 +271,7 @@ mlflow_client_restore_experiment <- function(client, experiment_id) {
 
 #' Get Run
 #'
-#' Get meta data, params, tags, and metrics for run. Only last logged value for each metric is returned.
+#' Gets metadata, params, tags, and metrics for a run. Only last logged value for each metric is returned.
 #'
 #' @template roxlate-run-id
 #' @template roxlate-client
@@ -192,7 +285,7 @@ mlflow_client_get_run <- function(client, run_id) {
 
 #' Log Metric
 #'
-#' API to log a metric for a run. Metrics key-value pair that record a single float measure.
+#' Logs a metric for a run. Metrics key-value pair that records a single float measure.
 #'   During a single execution of a run, a particular metric can be logged several times.
 #'   Backend will keep track of historical values along with timestamps.
 #'
@@ -217,9 +310,9 @@ mlflow_client_log_metric <- function(client, run_id, key, value, timestamp = NUL
 
 #' Log Parameter
 #'
-#' API to log a parameter used for this run. Examples are params and hyperparams
+#' Logs a parameter for a run. Examples are params and hyperparams
 #'   used for ML training, or constant dates and values used in an ETL pipeline.
-#'   A params is a STRING key-value pair. For a run, a single parameter is allowed
+#'   A param is a STRING key-value pair. For a run, a single parameter is allowed
 #'   to be logged only once.
 #'
 #' @param key Name of the parameter.
@@ -236,7 +329,7 @@ mlflow_client_log_param <- function(client, run_id, key, value) {
 
 #' Set Tag
 #'
-#' Set a tag on a run. Tags are run metadata that can be updated during and
+#' Sets a tag on a run. Tags are run metadata that can be updated during a run and
 #'  after a run completes.
 #'
 #' @param key Name of the tag. Maximum size is 255 bytes. This field is required.
@@ -253,6 +346,8 @@ mlflow_client_set_tag <- function(client, run_id, key, value) {
 }
 
 #' Terminate a Run
+#'
+#' Terminates a run.
 #'
 #' @param run_id Unique identifier for the run.
 #' @param status Updated status of the run. Defaults to `FINISHED`.
@@ -291,17 +386,17 @@ mlflow_client_restore_run <- function(client, run_id) {
 
 #' Log Artifact
 #'
-#' Logs an specific file or directory as an artifact.
+#' Logs a specific file or directory as an artifact for a run.
 #'
 #' @param path The file or directory to log as an artifact.
-#' @param artifact_path Destination path within the run’s artifact URI.
+#' @param artifact_path Destination path within the run's artifact URI.
 #' @template roxlate-client
 #' @template roxlate-run-id
 #'
 #' @details
 #'
 #' When logging to Amazon S3, ensure that the user has a proper policy
-#' attach to it, for instance:
+#' attached to it, for instance:
 #'
 #' \code{
 #' {
@@ -347,12 +442,15 @@ mlflow_client_log_artifact <- function(client, run_id, path, artifact_path = NUL
              artifact_param,
              artifact_path,
              "--run-id",
-             run_id)
+             run_id,
+             client = client)
 
   invisible(NULL)
 }
 
-#' List artifacts
+#' List Artifacts
+#'
+#' Gets a list of artifacts.
 #'
 #' @template roxlate-client
 #' @template roxlate-run-id
@@ -388,8 +486,8 @@ mlflow_client_download_artifacts <- function(client, run_id, path) {
           gsub("(.|\n)*(?=FileNotFoundError)", "", x, perl = TRUE),
           call. = FALSE
         )
-    }
+    },
+    client = client
   )
-
   gsub("\n", "", result$stdout)
 }
