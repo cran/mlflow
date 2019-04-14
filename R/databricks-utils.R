@@ -77,7 +77,8 @@ get_databricks_config <- function(profile) {
   } else if (exists("spark.databricks.token") && exists("spark.databricks.api.url")) {
     config_vars <- list(
       host = get("spark.databricks.api.url", envir = .GlobalEnv),
-      token = get("spark.databricks.token", envir = .GlobalEnv)
+      token = get("spark.databricks.token", envir = .GlobalEnv),
+      insecure = Sys.getenv(config_variable_map$insecure, "False")
     )
     new_databricks_config(config_source = "db_dynamic", config_vars = config_vars)
   } else {
@@ -95,7 +96,7 @@ get_databricks_config <- function(profile) {
 }
 
 mlflow_get_run_context.mlflow_databricks_client <- function(client, source_name, source_version,
-                                                            source_type, ...) {
+                                                            source_type, experiment_id, ...) {
   if (exists(".databricks_internals")) {
     notebook_info <- do.call(".get_notebook_info", list(), envir = get(".databricks_internals",
                                                                        envir = .GlobalEnv))
@@ -110,6 +111,7 @@ mlflow_get_run_context.mlflow_databricks_client <- function(client, source_name,
         source_type =  MLFLOW_SOURCE_TYPE$NOTEBOOK,
         source_name = notebook_info$path,
         tags = tags,
+        experiment_id = experiment_id %||% notebook_info$id,
         ...
       )
     } else {
