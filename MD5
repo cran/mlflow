@@ -1,4 +1,4 @@
-06ee5ad5cf722ed529f0ad0cf69e7cd9 *DESCRIPTION
+9deede993f9c448c50466b64fe57892b *DESCRIPTION
 f9dc14a9278f9c337d0b9c50aab6f16d *NAMESPACE
 02b69d366c4ad8a81b64cf3eb2f077dc *R/cli.R
 6be8d98af8f2d585705a4738b377b844 *R/databricks-utils.R
@@ -80,7 +80,7 @@ a96c68f78eb65f3aacaabb84c7a79f24 *tests/testthat/test-model.R
 1612aa3d58c418bcdf99f20b179162a4 *tests/testthat/test-rest.R
 a1473a589f8eab9c56529f40facd6079 *tests/testthat/test-run.R
 c944923e0899976ecd15a48c0a5db23b *tests/testthat/test-serve.R
-2220d8a7d61025f7ef56482a7abc1f87 *tests/testthat/test-style.R
+55b4f74fdb7607ccc2dff46742aaf042 *tests/testthat/test-style.R
 b081d3971a991520be27ea0faa72c34b *tests/testthat/test-tracking-experiments.R
 e5bfe44644088eebf568fc68f7e98e1f *tests/testthat/test-tracking-runs.R
 19a21d92f36742d6322f1a83c28c8d2a *tests/testthat/test-ui.R
