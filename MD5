@@ -1,5 +1,5 @@
-52e72e923cc82275d85feefde408688f *DESCRIPTION
-f9dc14a9278f9c337d0b9c50aab6f16d *NAMESPACE
+c96ccca4b8c2792b31e5ce0b210c82b4 *DESCRIPTION
+35b69a53de147d7a8329e69a4a99500b *NAMESPACE
 02b69d366c4ad8a81b64cf3eb2f077dc *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
 c8e3196549ec1068d6ef99e322bcd76b *R/globals.R
@@ -7,12 +7,12 @@ de01f03acfc1d43ec16b0b0c62b6b4fb *R/imports.R
 c34c1ad2b7252d0330c474d1bf18810b *R/install.R
 85e816d69b82de28975c79fdc7469fe1 *R/logging.R
 e0ef681901465d24f47f9139cb2c086a *R/mlflow-package.R
-b483e44e74304af61d0401ee6cb4ad21 *R/model-crate.R
-f587439aa285ff13e56239103fa8e5e2 *R/model-keras.R
+c20c6ce8a4de3beedf86efb73358a432 *R/model-crate.R
+8ebc7b6ca2cd2ba73d2614eeb2502b2e *R/model-keras.R
 8a22ad32f9cf05b94eaaf8af59b546c2 *R/model-python.R
 b908b3abdbc99960d2798e8e0ff00bc8 *R/model-serve.R
 097001249ffd1ae5758607bbea7bc9d1 *R/model-swagger.R
-c433db1c3069b101f7184c637db0e8c1 *R/model.R
+df559ece0989a4bd0904474a7e46b8b1 *R/model.R
 13b7c8086342c7bed978b8b0ca020cf4 *R/project-param.R
 00d602fe56687bd47d3f355463712539 *R/project-run.R
 2b4dbd35cefd8723466ec82dc404c48a *R/project-source.R
@@ -21,7 +21,7 @@ c433db1c3069b101f7184c637db0e8c1 *R/model.R
 d98221951130199b1f31d3e3f3aa6ff8 *R/tracking-experiments.R
 50bd4c11138d0860f411ef4a75f43f3b *R/tracking-globals.R
 38dc2b2192f7a929bbc251a872b12131 *R/tracking-rest.R
-f1f7e3fe33dcc9c83e9641d8b2869f65 *R/tracking-runs.R
+a1152883b23d9188f50ac09eb4e20bd6 *R/tracking-runs.R
 f30e1ff8c4989539f1c34910df8604b7 *R/tracking-server.R
 dc5e65d15ed533d81e3558994ec46066 *R/tracking-ui.R
 bed1559f7e37dea1690d34ca6e65d7a3 *R/tracking-utils.R
@@ -57,7 +57,7 @@ b7533de6c148b63b87c2864049c9c994 *man/mlflow_restore_experiment.Rd
 35441a3b973f467acf30c4f1690b0c40 *man/mlflow_restore_run.Rd
 0422c631a477a09f8c391ad6aa3b021a *man/mlflow_rfunc_serve.Rd
 59ddc242806d52f01b7898358f66b0af *man/mlflow_run.Rd
-fc005d3010cb1f47b69f28a9076dc6cd *man/mlflow_save_model.Rd
+a3a48b6f50672b56b728be5eba5c6174 *man/mlflow_save_model.Rd
 386015d0fc5bb925d36d5e4a0ec08554 *man/mlflow_search_runs.Rd
 b3d1b1ef0e1cdf7d2d6a9a3a2f2d654e *man/mlflow_server.Rd
 4f74a34a61c959143c7466c026cbf79f *man/mlflow_set_experiment.Rd
@@ -76,7 +76,7 @@ dea319c78b90f4fbd90fe46d74b1835c *tests/testthat/helpers.R
 082ebef73dbeee2a73aaa2c6dc8f4abe *tests/testthat/test-bypass-conda.R
 7040a93d23423ef3bb7bf5bc75c59f8c *tests/testthat/test-client.R
 2ecc1aa1a599d5d20c7a2daac6e63e13 *tests/testthat/test-databricks-utils.R
-a96c68f78eb65f3aacaabb84c7a79f24 *tests/testthat/test-model.R
+db631951fa9dbb5917e393e9e228f3a8 *tests/testthat/test-model.R
 13b569f7176b9c0797d067c2974c95bc *tests/testthat/test-params.R
 0141a5bafa2082eda1b797533bcde2ec *tests/testthat/test-python-install.R
 1612aa3d58c418bcdf99f20b179162a4 *tests/testthat/test-rest.R
