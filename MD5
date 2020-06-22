@@ -1,4 +1,4 @@
-6ef854f5f06c6b1dc485beaa15282773 *DESCRIPTION
+4b29be7ca6c5d7185f0c51607ffee89b *DESCRIPTION
 f9dc14a9278f9c337d0b9c50aab6f16d *NAMESPACE
 02b69d366c4ad8a81b64cf3eb2f077dc *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
@@ -67,7 +67,7 @@ b3d1b1ef0e1cdf7d2d6a9a3a2f2d654e *man/mlflow_server.Rd
 8b5c2021b9d9d0e894a2b3e4e27b20d9 *man/mlflow_source.Rd
 070e3b6d06a641c9de86da659cb390ec *man/mlflow_start_run.Rd
 052f50f1302ff116d27e59494ed01d29 *man/mlflow_ui.Rd
-aceadd42420a84b3f28d365fec1894f5 *man/reexports.Rd
+d57ed27f84cc6ecffec25e0a4bf4080b *man/reexports.Rd
 c93da4843eef7867c541d0a7814defc9 *man/uninstall_mlflow.Rd
 29018f6d587caf5536046712b75c4269 *tests/testthat.R
 78d1d673a4b457bcfa464eb562377280 *tests/testthat/examples/params_example.R
