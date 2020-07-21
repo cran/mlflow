@@ -1,10 +1,10 @@
-4b29be7ca6c5d7185f0c51607ffee89b *DESCRIPTION
+8291a6f62f7178b8dda1c765ea628588 *DESCRIPTION
 f9dc14a9278f9c337d0b9c50aab6f16d *NAMESPACE
 02b69d366c4ad8a81b64cf3eb2f077dc *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
 c8e3196549ec1068d6ef99e322bcd76b *R/globals.R
 de01f03acfc1d43ec16b0b0c62b6b4fb *R/imports.R
-c34c1ad2b7252d0330c474d1bf18810b *R/install.R
+7546e74b7d717f14604a6a3f860d143f *R/install.R
 85e816d69b82de28975c79fdc7469fe1 *R/logging.R
 e0ef681901465d24f47f9139cb2c086a *R/mlflow-package.R
 c20c6ce8a4de3beedf86efb73358a432 *R/model-crate.R
@@ -67,9 +67,9 @@ b3d1b1ef0e1cdf7d2d6a9a3a2f2d654e *man/mlflow_server.Rd
 8b5c2021b9d9d0e894a2b3e4e27b20d9 *man/mlflow_source.Rd
 070e3b6d06a641c9de86da659cb390ec *man/mlflow_start_run.Rd
 052f50f1302ff116d27e59494ed01d29 *man/mlflow_ui.Rd
-d57ed27f84cc6ecffec25e0a4bf4080b *man/reexports.Rd
+aceadd42420a84b3f28d365fec1894f5 *man/reexports.Rd
 c93da4843eef7867c541d0a7814defc9 *man/uninstall_mlflow.Rd
-29018f6d587caf5536046712b75c4269 *tests/testthat.R
+a03d0fd7b927e17711e9e875890a402c *tests/testthat.R
 78d1d673a4b457bcfa464eb562377280 *tests/testthat/examples/params_example.R
 3db073a0c5a6d15b933dee0479956723 *tests/testthat/examples/train_example.R
 dea319c78b90f4fbd90fe46d74b1835c *tests/testthat/helpers.R
