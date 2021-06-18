@@ -1,4 +1,4 @@
-de6e907bfc69884ecaed41c698f96cab *DESCRIPTION
+ced084c3b7b67f6dcec70736d762e729 *DESCRIPTION
 58629400b76bc55603cd055f23bc9973 *NAMESPACE
 7a9884e41925abe9fa865a33372845b4 *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
@@ -84,7 +84,7 @@ dea319c78b90f4fbd90fe46d74b1835c *tests/testthat/helpers.R
 25acfb978fa189081eae9f514a3b36c3 *tests/testthat/test-client.R
 2ecc1aa1a599d5d20c7a2daac6e63e13 *tests/testthat/test-databricks-utils.R
 faa3a751c4b82d1f71d209cc83aa7f33 *tests/testthat/test-keras-model.R
-d3a1862194d7c51d0d08355b49179d4f *tests/testthat/test-model-h2o.R
+947d5ad92f6ab4551114cef17f75916b *tests/testthat/test-model-h2o.R
 79f0b12de33cc7a9815495b9ba60652f *tests/testthat/test-model-mleap.R
 dae39e062df6664f8cb4bc3487e20e52 *tests/testthat/test-model-xgboost.R
 7fb672ced384a6d8ccf1aac606048a47 *tests/testthat/test-model.R
