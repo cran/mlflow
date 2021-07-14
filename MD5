@@ -1,5 +1,5 @@
-ced084c3b7b67f6dcec70736d762e729 *DESCRIPTION
-58629400b76bc55603cd055f23bc9973 *NAMESPACE
+32a49f4fa600351fceded6cfd77175f1 *DESCRIPTION
+f483690947714a8c88a5ab3fad4ec325 *NAMESPACE
 7a9884e41925abe9fa865a33372845b4 *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
 c8e3196549ec1068d6ef99e322bcd76b *R/globals.R
@@ -12,6 +12,7 @@ c20c6ce8a4de3beedf86efb73358a432 *R/model-crate.R
 27b49ed87e818da4e6b7e85557154c52 *R/model-keras.R
 794ed7c95715f23c6415edd5eedc7af5 *R/model-mleap.R
 6d90b71b87c1d599d0290fd540b0474b *R/model-python.R
+cbb8269001b43b4f13307aad6d0bc6ce *R/model-registry.R
 b908b3abdbc99960d2798e8e0ff00bc8 *R/model-serve.R
 097001249ffd1ae5758607bbea7bc9d1 *R/model-swagger.R
 313a7ea34beb2f881ca57f371a606eff *R/model-utils.R
@@ -25,7 +26,7 @@ fa4b265ae24885d1527d9393f776cbf3 *R/model-xgboost.R
 81dafee21e17e8202fc10322d4fdbdca *R/tracking-experiments.R
 501a1819f2ff1c94dbfb414ff79909f0 *R/tracking-globals.R
 3819379397d13e8b622dd59220aaaa2a *R/tracking-observer.R
-86f0be1edb49c088cd08c3de3c43f4b3 *R/tracking-rest.R
+9d02bb6fe95ba20206de0f2a161c5587 *R/tracking-rest.R
 cf3bdaef2414f4c5dd797049860b245a *R/tracking-runs.R
 f30e1ff8c4989539f1c34910df8604b7 *R/tracking-server.R
 dc5e65d15ed533d81e3558994ec46066 *R/tracking-ui.R
@@ -35,7 +36,9 @@ bed1559f7e37dea1690d34ca6e65d7a3 *R/tracking-utils.R
 a3a9abf3c347141ddc6ac65c811c52b5 *man/mlflow-package.Rd
 d2da92ee3be9ce496d19dd141a055343 *man/mlflow_client.Rd
 28aa9002b1189364c209d3a3157bbb6c *man/mlflow_create_experiment.Rd
+d57bb3e83730a018e1549de77c082c09 *man/mlflow_create_registered_model.Rd
 2ead173e1a4bc9ae3d372e4f772a197e *man/mlflow_delete_experiment.Rd
+99a1f1629f74918936d8c762850a6656 *man/mlflow_delete_registered_model.Rd
 91fbf3755d14d2f8408203eb8dbe18e6 *man/mlflow_delete_run.Rd
 cbe25d7946b882f1278d0054600977cc *man/mlflow_delete_tag.Rd
 44872080093dae36dfdbd479fd045855 *man/mlflow_download_artifacts.Rd
@@ -86,6 +89,7 @@ dea319c78b90f4fbd90fe46d74b1835c *tests/testthat/helpers.R
 faa3a751c4b82d1f71d209cc83aa7f33 *tests/testthat/test-keras-model.R
 947d5ad92f6ab4551114cef17f75916b *tests/testthat/test-model-h2o.R
 79f0b12de33cc7a9815495b9ba60652f *tests/testthat/test-model-mleap.R
+7d9fd7eb875b9b868f705fbb9e9c860b *tests/testthat/test-model-registry.R
 dae39e062df6664f8cb4bc3487e20e52 *tests/testthat/test-model-xgboost.R
 7fb672ced384a6d8ccf1aac606048a47 *tests/testthat/test-model.R
 13b569f7176b9c0797d067c2974c95bc *tests/testthat/test-params.R
