@@ -1,10 +1,10 @@
-d8899ddd8803563f76a356e3e83936de *DESCRIPTION
+acf81e98c990947c848c9a8af07fa4e4 *DESCRIPTION
 48ebe4d58c0048538d4753370d0d2201 *NAMESPACE
 7a9884e41925abe9fa865a33372845b4 *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
 c8e3196549ec1068d6ef99e322bcd76b *R/globals.R
 de01f03acfc1d43ec16b0b0c62b6b4fb *R/imports.R
-23e358ea8ca81514d37552cdc05d8980 *R/install.R
+f435d848f56514b5f3062dc27805c83d *R/install.R
 85e816d69b82de28975c79fdc7469fe1 *R/logging.R
 c4b23144aadb3915baa29961bbac58b2 *R/mlflow-package.R
 c20c6ce8a4de3beedf86efb73358a432 *R/model-crate.R
@@ -23,7 +23,7 @@ fa4b265ae24885d1527d9393f776cbf3 *R/model-xgboost.R
 2b4dbd35cefd8723466ec82dc404c48a *R/project-source.R
 41c3bf62900e64dcdc3185883a62b547 *R/python.R
 12b98948c2f56b646ef535c31421d618 *R/tracking-client.R
-81dafee21e17e8202fc10322d4fdbdca *R/tracking-experiments.R
+6b675ec65da5480de01fd82f57852304 *R/tracking-experiments.R
 501a1819f2ff1c94dbfb414ff79909f0 *R/tracking-globals.R
 3819379397d13e8b622dd59220aaaa2a *R/tracking-observer.R
 ee4b07a14172d8740b103625d75bd564 *R/tracking-rest.R
@@ -31,11 +31,11 @@ cf3bdaef2414f4c5dd797049860b245a *R/tracking-runs.R
 f30e1ff8c4989539f1c34910df8604b7 *R/tracking-server.R
 dc5e65d15ed533d81e3558994ec46066 *R/tracking-ui.R
 bed1559f7e37dea1690d34ca6e65d7a3 *R/tracking-utils.R
-06b111108fac832167ae36ce4b3f0515 *README.md
+715518b25866d774923aa419a27e6277 *README.md
 5bf10ba3650cc05e1348f86d1a648489 *man/install_mlflow.Rd
-a3a9abf3c347141ddc6ac65c811c52b5 *man/mlflow-package.Rd
+50f12f5690c9fbd8fc1b019874293ca2 *man/mlflow-package.Rd
 d2da92ee3be9ce496d19dd141a055343 *man/mlflow_client.Rd
-28aa9002b1189364c209d3a3157bbb6c *man/mlflow_create_experiment.Rd
+1d20a0c52eac3f6f9921c7d01e4151e1 *man/mlflow_create_experiment.Rd
 922b10611ee7876d89f9ddc5372df870 *man/mlflow_create_model_version.Rd
 d57bb3e83730a018e1549de77c082c09 *man/mlflow_create_registered_model.Rd
 2ead173e1a4bc9ae3d372e4f772a197e *man/mlflow_delete_experiment.Rd
@@ -108,7 +108,7 @@ dae39e062df6664f8cb4bc3487e20e52 *tests/testthat/test-model-xgboost.R
 9b5a0115f9af819817c823146b0876d0 *tests/testthat/test-run.R
 02cfa7d11fe2e4ade271ebec67345199 *tests/testthat/test-serve.R
 55b4f74fdb7607ccc2dff46742aaf042 *tests/testthat/test-style.R
-ade0e227832ea5dda413fcb22f0e73f6 *tests/testthat/test-tracking-experiments.R
+acee0690d3b97a2305ed69cdac1c9f3d *tests/testthat/test-tracking-experiments.R
 43246a5b38e6c343430df68d39d75384 *tests/testthat/test-tracking-runs.R
 19a21d92f36742d6322f1a83c28c8d2a *tests/testthat/test-ui.R
 9a3f01652860041c0635dda77889f2e8 *tests/testthat/test/crate.bin

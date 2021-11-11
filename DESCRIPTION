@@ -1,7 +1,7 @@
 Type: Package
 Package: mlflow
 Title: Interface to 'MLflow'
-Version: 1.20.2
+Version: 1.21.0
 Authors@R: 
     c(person(given = "Matei",
              family = "Zaharia",
@@ -33,7 +33,7 @@ Imports: base64enc, forge, fs, git2r, glue, httpuv, httr, ini,
 Suggests: carrier, covr, h2o, keras, lintr, mleap, sparklyr, stringi (<
         1.4.4), testthat (>= 2.0.0), xgboost
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Collate: 'cli.R' 'databricks-utils.R' 'globals.R' 'imports.R'
         'install.R' 'logging.R' 'mlflow-package.R' 'model-crate.R'
         'model-python.R' 'model.R' 'model-utils.R' 'model-h2o.R'
@@ -45,10 +45,10 @@ Collate: 'cli.R' 'databricks-utils.R' 'globals.R' 'imports.R'
         'tracking-runs.R' 'tracking-server.R' 'tracking-ui.R'
         'tracking-utils.R'
 NeedsCompilation: no
-Packaged: 2021-09-06 01:35:55 UTC; jenkins
+Packaged: 2021-11-11 01:23:33 UTC; jenkins
 Author: Matei Zaharia [aut, cre],
   Javier Luraschi [aut],
   Kevin Kuo [aut] (<https://orcid.org/0000-0001-7803-7901>),
   RStudio [cph]
 Repository: CRAN
-Date/Publication: 2021-09-06 08:50:05 UTC
+Date/Publication: 2021-11-11 06:20:02 UTC
