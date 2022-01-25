@@ -1,7 +1,7 @@
 Type: Package
 Package: mlflow
 Title: Interface to 'MLflow'
-Version: 1.22.0
+Version: 1.23.0
 Authors@R: 
     c(person(given = "Matei",
              family = "Zaharia",
@@ -29,26 +29,26 @@ BugReports: https://github.com/mlflow/mlflow/issues
 Depends: R (>= 3.3.0)
 Imports: base64enc, forge, fs, git2r, glue, httpuv, httr, ini,
         jsonlite, openssl, processx, purrr, reticulate, rlang (>=
-        0.2.0), swagger, tibble (>= 2.0.0), withr, xml2, yaml, zeallot
-Suggests: carrier, covr, h2o, keras, lintr, mleap, sparklyr, stringi (<
+        0.2.0), swagger, tibble (>= 2.0.0), withr, yaml, zeallot
+Suggests: carrier, covr, h2o, keras, lintr, sparklyr, stringi (<
         1.4.4), testthat (>= 2.0.0), xgboost
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 Collate: 'cli.R' 'databricks-utils.R' 'globals.R' 'imports.R'
         'install.R' 'logging.R' 'mlflow-package.R' 'model-crate.R'
         'model-python.R' 'model.R' 'model-utils.R' 'model-h2o.R'
-        'model-keras.R' 'model-mleap.R' 'model-registry.R'
-        'model-serve.R' 'model-swagger.R' 'model-xgboost.R'
-        'project-param.R' 'project-run.R' 'project-source.R' 'python.R'
+        'model-keras.R' 'model-registry.R' 'model-serve.R'
+        'model-swagger.R' 'model-xgboost.R' 'project-param.R'
+        'project-run.R' 'project-source.R' 'python.R'
         'tracking-client.R' 'tracking-experiments.R'
         'tracking-observer.R' 'tracking-globals.R' 'tracking-rest.R'
         'tracking-runs.R' 'tracking-server.R' 'tracking-ui.R'
         'tracking-utils.R'
 NeedsCompilation: no
-Packaged: 2021-12-07 00:53:18 UTC; jenkins
+Packaged: 2022-01-24 01:39:15 UTC; root
 Author: Matei Zaharia [aut, cre],
   Javier Luraschi [aut],
   Kevin Kuo [aut] (<https://orcid.org/0000-0001-7803-7901>),
   RStudio [cph]
 Repository: CRAN
-Date/Publication: 2021-12-07 06:20:02 UTC
+Date/Publication: 2022-01-25 09:52:42 UTC

@@ -1,5 +1,5 @@
-bd288748fcf5e126d1a45294cc9833c2 *DESCRIPTION
-48ebe4d58c0048538d4753370d0d2201 *NAMESPACE
+21082bac5cee31a17fd1fa037368de9c *DESCRIPTION
+86d770b01bdeac334433bb6eff7617ed *NAMESPACE
 7a9884e41925abe9fa865a33372845b4 *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
 c8e3196549ec1068d6ef99e322bcd76b *R/globals.R
@@ -10,14 +10,13 @@ c4b23144aadb3915baa29961bbac58b2 *R/mlflow-package.R
 c20c6ce8a4de3beedf86efb73358a432 *R/model-crate.R
 4e19552922f4fb8f9e495251f5c4264c *R/model-h2o.R
 27b49ed87e818da4e6b7e85557154c52 *R/model-keras.R
-794ed7c95715f23c6415edd5eedc7af5 *R/model-mleap.R
 6d90b71b87c1d599d0290fd540b0474b *R/model-python.R
-0e4f19d2953ef1c323d51f96e3514e45 *R/model-registry.R
+a256ceb3353842d58c7836480d53fab4 *R/model-registry.R
 b908b3abdbc99960d2798e8e0ff00bc8 *R/model-serve.R
 097001249ffd1ae5758607bbea7bc9d1 *R/model-swagger.R
 313a7ea34beb2f881ca57f371a606eff *R/model-utils.R
 fa4b265ae24885d1527d9393f776cbf3 *R/model-xgboost.R
-6d7407d57e0b0f2f6c75d8cf9a775b62 *R/model.R
+c72d1b2cb5266b1fb2557157033112c4 *R/model.R
 13b7c8086342c7bed978b8b0ca020cf4 *R/project-param.R
 1851043463063825a7dee9052f751105 *R/project-run.R
 2b4dbd35cefd8723466ec82dc404c48a *R/project-source.R
@@ -74,7 +73,7 @@ b7533de6c148b63b87c2864049c9c994 *man/mlflow_restore_experiment.Rd
 35441a3b973f467acf30c4f1690b0c40 *man/mlflow_restore_run.Rd
 0422c631a477a09f8c391ad6aa3b021a *man/mlflow_rfunc_serve.Rd
 59ddc242806d52f01b7898358f66b0af *man/mlflow_run.Rd
-c154f800dabe67657fd7ca01c4022381 *man/mlflow_save_model.Rd
+e23d52e3b22cf25b57571a89dec67d7a *man/mlflow_save_model.Rd
 386015d0fc5bb925d36d5e4a0ec08554 *man/mlflow_search_runs.Rd
 b3d1b1ef0e1cdf7d2d6a9a3a2f2d654e *man/mlflow_server.Rd
 4f74a34a61c959143c7466c026cbf79f *man/mlflow_set_experiment.Rd
@@ -89,7 +88,7 @@ ee2e2cc004c33516773109d58baa6f3a *man/mlflow_update_model_version.Rd
 d888da3f957b4f5913ae4418a47e2067 *man/mlflow_update_registered_model.Rd
 d57ed27f84cc6ecffec25e0a4bf4080b *man/reexports.Rd
 c93da4843eef7867c541d0a7814defc9 *man/uninstall_mlflow.Rd
-743fa422d6fd7dfecaf2e1d596650820 *tests/testthat.R
+c5ee1998e5ef35b8adfd23510599abdc *tests/testthat.R
 78d1d673a4b457bcfa464eb562377280 *tests/testthat/examples/params_example.R
 3db073a0c5a6d15b933dee0479956723 *tests/testthat/examples/train_example.R
 dea319c78b90f4fbd90fe46d74b1835c *tests/testthat/helpers.R
@@ -97,10 +96,9 @@ dea319c78b90f4fbd90fe46d74b1835c *tests/testthat/helpers.R
 25acfb978fa189081eae9f514a3b36c3 *tests/testthat/test-client.R
 2ecc1aa1a599d5d20c7a2daac6e63e13 *tests/testthat/test-databricks-utils.R
 faa3a751c4b82d1f71d209cc83aa7f33 *tests/testthat/test-keras-model.R
-947d5ad92f6ab4551114cef17f75916b *tests/testthat/test-model-h2o.R
-a480308c36ada65fd76f42f282b23e16 *tests/testthat/test-model-mleap.R
+f71fc494b04aff0f55b9914c063e8bb3 *tests/testthat/test-model-h2o.R
 461e7734f91c9ae8fe80903a2381382d *tests/testthat/test-model-registry.R
-dae39e062df6664f8cb4bc3487e20e52 *tests/testthat/test-model-xgboost.R
+4b3ed54cd4f2b2c5e56c506ba4a2fcbe *tests/testthat/test-model-xgboost.R
 7fb672ced384a6d8ccf1aac606048a47 *tests/testthat/test-model.R
 13b569f7176b9c0797d067c2974c95bc *tests/testthat/test-params.R
 0141a5bafa2082eda1b797533bcde2ec *tests/testthat/test-python-install.R
