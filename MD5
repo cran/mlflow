@@ -1,10 +1,10 @@
-21082bac5cee31a17fd1fa037368de9c *DESCRIPTION
+dac5fc20d724153210ad5fec6a7934cf *DESCRIPTION
 86d770b01bdeac334433bb6eff7617ed *NAMESPACE
 7a9884e41925abe9fa865a33372845b4 *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
 c8e3196549ec1068d6ef99e322bcd76b *R/globals.R
 de01f03acfc1d43ec16b0b0c62b6b4fb *R/imports.R
-451822a00c0391bfae295022e0480349 *R/install.R
+d2e6a3ea93479db6c892372811c579b5 *R/install.R
 85e816d69b82de28975c79fdc7469fe1 *R/logging.R
 c4b23144aadb3915baa29961bbac58b2 *R/mlflow-package.R
 c20c6ce8a4de3beedf86efb73358a432 *R/model-crate.R
@@ -16,11 +16,11 @@ b908b3abdbc99960d2798e8e0ff00bc8 *R/model-serve.R
 097001249ffd1ae5758607bbea7bc9d1 *R/model-swagger.R
 313a7ea34beb2f881ca57f371a606eff *R/model-utils.R
 fa4b265ae24885d1527d9393f776cbf3 *R/model-xgboost.R
-c72d1b2cb5266b1fb2557157033112c4 *R/model.R
+96f7fbdb10f2333b3455761b75e26a9e *R/model.R
 13b7c8086342c7bed978b8b0ca020cf4 *R/project-param.R
 1851043463063825a7dee9052f751105 *R/project-run.R
 2b4dbd35cefd8723466ec82dc404c48a *R/project-source.R
-41c3bf62900e64dcdc3185883a62b547 *R/python.R
+3f8a82b3e2a81196ab1af819be222ba6 *R/python.R
 12b98948c2f56b646ef535c31421d618 *R/tracking-client.R
 6b675ec65da5480de01fd82f57852304 *R/tracking-experiments.R
 501a1819f2ff1c94dbfb414ff79909f0 *R/tracking-globals.R
@@ -99,7 +99,7 @@ faa3a751c4b82d1f71d209cc83aa7f33 *tests/testthat/test-keras-model.R
 f71fc494b04aff0f55b9914c063e8bb3 *tests/testthat/test-model-h2o.R
 461e7734f91c9ae8fe80903a2381382d *tests/testthat/test-model-registry.R
 4b3ed54cd4f2b2c5e56c506ba4a2fcbe *tests/testthat/test-model-xgboost.R
-7fb672ced384a6d8ccf1aac606048a47 *tests/testthat/test-model.R
+7b33accfc9ac0a0c83406f5c6b10e505 *tests/testthat/test-model.R
 13b569f7176b9c0797d067c2974c95bc *tests/testthat/test-params.R
 0141a5bafa2082eda1b797533bcde2ec *tests/testthat/test-python-install.R
 1612aa3d58c418bcdf99f20b179162a4 *tests/testthat/test-rest.R
