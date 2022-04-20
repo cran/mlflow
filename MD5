@@ -1,4 +1,4 @@
-dac5fc20d724153210ad5fec6a7934cf *DESCRIPTION
+081a786562101303965ff2756da78f4c *DESCRIPTION
 86d770b01bdeac334433bb6eff7617ed *NAMESPACE
 7a9884e41925abe9fa865a33372845b4 *R/cli.R
 d93ecba3e089f33c63da3be03966d037 *R/databricks-utils.R
@@ -30,7 +30,7 @@ ee4b07a14172d8740b103625d75bd564 *R/tracking-rest.R
 f30e1ff8c4989539f1c34910df8604b7 *R/tracking-server.R
 dc5e65d15ed533d81e3558994ec46066 *R/tracking-ui.R
 bed1559f7e37dea1690d34ca6e65d7a3 *R/tracking-utils.R
-715518b25866d774923aa419a27e6277 *README.md
+58b58102416183e46cccf6647a51f0a8 *README.md
 56bee92186a549545980ad62350ad1e1 *man/install_mlflow.Rd
 50f12f5690c9fbd8fc1b019874293ca2 *man/mlflow-package.Rd
 d2da92ee3be9ce496d19dd141a055343 *man/mlflow_client.Rd
