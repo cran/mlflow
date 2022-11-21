@@ -1,7 +1,7 @@
 Type: Package
 Package: mlflow
 Title: Interface to 'MLflow'
-Version: 1.30.0
+Version: 2.0.1
 Authors@R: 
     c(person(given = "Matei",
              family = "Zaharia",
@@ -28,27 +28,26 @@ URL: https://github.com/mlflow/mlflow
 BugReports: https://github.com/mlflow/mlflow/issues
 Depends: R (>= 3.3.0)
 Imports: base64enc, forge, fs, git2r, glue, httpuv, httr, ini,
-        jsonlite, openssl, processx, purrr, reticulate, rlang (>=
-        0.2.0), swagger, tibble (>= 2.0.0), withr, yaml, zeallot
-Suggests: carrier, covr, h2o, keras, lintr, sparklyr, stringi (<
-        1.4.4), testthat (>= 2.0.0), xgboost
+        jsonlite, openssl, processx, purrr, rlang (>= 0.2.0), swagger,
+        tibble (>= 2.0.0), withr, yaml, zeallot
+Suggests: carrier, covr, h2o, keras, lintr, sparklyr, stringi, testthat
+        (>= 2.0.0), reticulate, xgboost
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 Collate: 'cli.R' 'databricks-utils.R' 'globals.R' 'imports.R'
-        'install.R' 'logging.R' 'mlflow-package.R' 'model-crate.R'
-        'model-python.R' 'model.R' 'model-utils.R' 'model-h2o.R'
-        'model-keras.R' 'model-registry.R' 'model-serve.R'
-        'model-swagger.R' 'model-xgboost.R' 'project-param.R'
-        'project-run.R' 'project-source.R' 'python.R'
-        'tracking-client.R' 'tracking-experiments.R'
-        'tracking-observer.R' 'tracking-globals.R' 'tracking-rest.R'
-        'tracking-runs.R' 'tracking-server.R' 'tracking-ui.R'
-        'tracking-utils.R'
+        'logging.R' 'mlflow-package.R' 'model-crate.R' 'model-python.R'
+        'model.R' 'model-utils.R' 'model-h2o.R' 'model-keras.R'
+        'model-registry.R' 'model-serve.R' 'model-swagger.R'
+        'model-xgboost.R' 'project-param.R' 'project-run.R'
+        'project-source.R' 'python.R' 'tracking-client.R'
+        'tracking-experiments.R' 'tracking-observer.R'
+        'tracking-globals.R' 'tracking-rest.R' 'tracking-runs.R'
+        'tracking-server.R' 'tracking-ui.R' 'tracking-utils.R'
 NeedsCompilation: no
-Packaged: 2022-10-27 14:29:51 UTC; root
+Packaged: 2022-11-21 17:23:05 UTC; root
 Author: Matei Zaharia [aut, cre],
   Javier Luraschi [aut],
   Kevin Kuo [aut] (<https://orcid.org/0000-0001-7803-7901>),
   RStudio [cph]
 Repository: CRAN
-Date/Publication: 2022-10-27 15:12:42 UTC
+Date/Publication: 2022-11-21 17:50:02 UTC
