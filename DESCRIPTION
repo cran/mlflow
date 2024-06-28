@@ -1,7 +1,7 @@
 Type: Package
 Package: mlflow
 Title: Interface to 'MLflow'
-Version: 2.13.1
+Version: 2.14.1
 Authors@R: 
     c(person(given = "Matei",
              family = "Zaharia",
@@ -44,10 +44,10 @@ Collate: 'cli.R' 'databricks-utils.R' 'globals.R' 'imports.R'
         'tracking-globals.R' 'tracking-rest.R' 'tracking-runs.R'
         'tracking-server.R' 'tracking-ui.R' 'tracking-utils.R'
 NeedsCompilation: no
-Packaged: 2024-05-31 00:18:20 UTC; root
+Packaged: 2024-06-27 05:29:27 UTC; root
 Author: Matei Zaharia [aut, cre],
   Javier Luraschi [aut],
   Kevin Kuo [aut] (<https://orcid.org/0000-0001-7803-7901>),
   RStudio [cph]
 Repository: CRAN
-Date/Publication: 2024-05-31 03:50:03 UTC
+Date/Publication: 2024-06-28 20:40:02 UTC
