@@ -1,4 +1,4 @@
-cd801dfe91d08a3807980b50c13fb862 *DESCRIPTION
+ff32dc165d9e90a75ba782affaab1711 *DESCRIPTION
 ed1ef64ac1c1653f4b7edcc8d2c86a6d *NAMESPACE
 2d3c8a2495fa0282f1dec616d0e32dec *R/cli.R
 f6abaf830a24a2782841cb04e3160bcd *R/databricks-utils.R
@@ -29,7 +29,7 @@ ee4b07a14172d8740b103625d75bd564 *R/tracking-rest.R
 f5ef19cd291f5f2ba96fa9e6fb3f738e *R/tracking-server.R
 0619c6f7ccdde20d73bc995276ab84e0 *R/tracking-ui.R
 bed1559f7e37dea1690d34ca6e65d7a3 *R/tracking-utils.R
-1a646922e3a86a583ccce9b92c78696e *README.md
+df15004baa7d949a009c23c10816a519 *README.md
 06e783a06b92614cded5d199e6e17aaa *man/build_context_tags_from_databricks_job_info.Rd
 7ad14803c4e4cff187a9f9e8a3ae203c *man/build_context_tags_from_databricks_notebook_info.Rd
 50f12f5690c9fbd8fc1b019874293ca2 *man/mlflow-package.Rd
