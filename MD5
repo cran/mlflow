@@ -1,4 +1,4 @@
-4065e25e18f9d2ce90d3ce78f2a9b188 *DESCRIPTION
+65cbae91993527301a1e1889d4732209 *DESCRIPTION
 b1b6d79a41ea660a6cc2446452087dba *NAMESPACE
 2cc50409cdcfbfbc5ce057a3457be9c1 *R/cast-utils.R
 2d3c8a2495fa0282f1dec616d0e32dec *R/cli.R
@@ -15,7 +15,7 @@ d1506bda0cc2bc1bb272a5dcd8a92638 *R/model-keras.R
 f4f258d40f2aff3b5220de111eec5b91 *R/model-serve.R
 097001249ffd1ae5758607bbea7bc9d1 *R/model-swagger.R
 9d08dcf69b568c24719fdf97523cd134 *R/model-utils.R
-501a6dd32365d955d151b34709ccd9f5 *R/model-xgboost.R
+aa2297bfd314de2ba2dff78aab5cd94b *R/model-xgboost.R
 a49b579fec52ec245eadb22b1b77841b *R/model.R
 feb4103ca3eaaa14388347353d2d05dd *R/project-param.R
 9c857c4ef44edce90ceb77cc6debfe03 *R/project-run.R
