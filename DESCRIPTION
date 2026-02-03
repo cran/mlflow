@@ -1,7 +1,7 @@
 Type: Package
 Package: mlflow
 Title: Interface to 'MLflow'
-Version: 3.6.0
+Version: 3.9.0
 Authors@R: 
     c(person(given = "Ben",
              family = "Wilson",
@@ -48,7 +48,7 @@ Collate: 'cast-utils.R' 'cli.R' 'databricks-utils.R' 'globals.R'
         'tracking-runs.R' 'tracking-server.R' 'tracking-ui.R'
         'tracking-utils.R'
 NeedsCompilation: no
-Packaged: 2025-11-14 18:32:23 UTC; root
+Packaged: 2026-02-03 12:14:43 UTC; root
 Author: Ben Wilson [aut, cre],
   Matei Zaharia [aut],
   Javier Luraschi [aut],
@@ -56,4 +56,4 @@ Author: Ben Wilson [aut, cre],
   RStudio [cph]
 Maintainer: Ben Wilson <benjamin.wilson@databricks.com>
 Repository: CRAN
-Date/Publication: 2025-11-14 21:30:02 UTC
+Date/Publication: 2026-02-03 18:40:02 UTC
